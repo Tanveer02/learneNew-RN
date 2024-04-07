@@ -4,7 +4,6 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
@@ -14,16 +13,17 @@ const SignupScreen = () => {
   const [email, setEmail] = useState('');
   const [location, setLocation] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
 
-  console.log('Name:', name);
-  console.log('Email:', email);
-  console.log('Location:', location);
-  console.log('Password:', password);
   const handleSignup = () => {
     try {
       if (name && email && location && password) {
         console.log('SignUp success');
+        navigation.navigate('HomeMain');
+        setName('');
+        setEmail('');
+        setLocation('');
+        setPassword('');
       } else {
         console.log('Not SignUp');
       }

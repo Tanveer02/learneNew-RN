@@ -11,12 +11,15 @@ import {
 const SigninScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
 
   const handleSignIn = () => {
     try {
       if (email && password) {
         console.log('SignIn success');
+        navigation.navigate('HomeMain');
+        setEmail('');
+        setPassword('');
       } else {
         console.log('Not SignIn');
       }
